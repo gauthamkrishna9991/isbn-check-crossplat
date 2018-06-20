@@ -7,55 +7,97 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Debug/ISBN_Check.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="320 300">
+  <widget class="Gtk.Window" id="MainWindow" design-size="398 352">
     <property name="MemberName" />
     <property name="Title" translatable="yes">ISBN Check</property>
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
-      <widget class="Gtk.Fixed" id="fixed1">
+      <widget class="Gtk.VBox" id="vbox2">
         <property name="MemberName" />
-        <property name="WidthRequest">320</property>
-        <property name="HeightRequest">240</property>
-        <property name="HasWindow">False</property>
+        <property name="CanFocus">True</property>
+        <property name="Homogeneous">True</property>
+        <property name="Spacing">6</property>
         <child>
-          <widget class="Gtk.Button" id="IsbnButton">
+          <widget class="Gtk.HBox" id="hbox1">
             <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">Check</property>
-            <property name="UseUnderline">True</property>
-            <property name="Relief">Half</property>
-            <signal name="Clicked" handler="OnIsbnButtonClicked" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Fixed" id="fixed5">
+                <property name="MemberName" />
+                <property name="HasWindow">False</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.EventBox" id="eventbox1">
+                <property name="MemberName" />
+                <child>
+                  <widget class="Gtk.Entry" id="IsbnEntry">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="IsEditable">True</property>
+                    <property name="WidthChars">13</property>
+                    <property name="MaxLength">13</property>
+                    <property name="InvisibleChar">•</property>
+                    <signal name="Activated" handler="OnIsbnButtonClicked" />
+                  </widget>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.ToggleButton" id="IsbnButton">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Check</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnIsbnButtonClicked" />
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Fixed" id="fixed6">
+                <property name="MemberName" />
+                <property name="HasWindow">False</property>
+              </widget>
+              <packing>
+                <property name="Position">3</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
           </widget>
           <packing>
-            <property name="X">220</property>
-            <property name="Y">80</property>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
           </packing>
         </child>
         <child>
           <widget class="Gtk.Label" id="Isbn_Text_Block">
             <property name="MemberName" />
-            <property name="Xpad">20</property>
+            <property name="Ypad">40</property>
             <property name="LabelProp" translatable="yes">Enter ISBN</property>
-            <property name="Justify">Fill</property>
+            <property name="Justify">Center</property>
           </widget>
           <packing>
-            <property name="X">96</property>
-            <property name="Y">200</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Entry" id="IsbnEntry">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="IsEditable">True</property>
-            <property name="InvisibleChar">●</property>
-            <signal name="Activated" handler="OnIsbnButtonClicked" />
-          </widget>
-          <packing>
-            <property name="X">10</property>
-            <property name="Y">80</property>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
           </packing>
         </child>
       </widget>

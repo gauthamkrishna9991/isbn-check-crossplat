@@ -13,6 +13,7 @@ public partial class MainWindow : Gtk.Window
         Application.Quit();
         a.RetVal = true;
     }
+    //ISBN Check Function Isbncheck()
     public static int Isbncheck(string chk)
     {
         //Console.WriteLine(chk);
@@ -53,7 +54,7 @@ public partial class MainWindow : Gtk.Window
         }
         return 2;
     }
-
+    //Main Window ISBN Button Click Method
     protected void OnIsbnButtonClicked(object sender, EventArgs e)
     {
         if (IsbnEntry.Text.Length != 0)

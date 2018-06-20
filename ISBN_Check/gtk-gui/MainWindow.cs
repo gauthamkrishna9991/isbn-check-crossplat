@@ -3,13 +3,21 @@
 
 public partial class MainWindow
 {
-	private global::Gtk.Fixed fixed1;
+	private global::Gtk.VBox vbox2;
 
-	private global::Gtk.Button IsbnButton;
+	private global::Gtk.HBox hbox1;
 
-	private global::Gtk.Label Isbn_Text_Block;
+	private global::Gtk.Fixed fixed5;
+
+	private global::Gtk.EventBox eventbox1;
 
 	private global::Gtk.Entry IsbnEntry;
+
+	private global::Gtk.ToggleButton IsbnButton;
+
+	private global::Gtk.Fixed fixed6;
+
+	private global::Gtk.Label Isbn_Text_Block;
 
 	protected virtual void Build()
 	{
@@ -19,52 +27,81 @@ public partial class MainWindow
 		this.Title = global::Mono.Unix.Catalog.GetString("ISBN Check");
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		// Container child MainWindow.Gtk.Container+ContainerChild
-		this.fixed1 = new global::Gtk.Fixed();
-		this.fixed1.WidthRequest = 320;
-		this.fixed1.HeightRequest = 240;
-		this.fixed1.Name = "fixed1";
-		this.fixed1.HasWindow = false;
-		// Container child fixed1.Gtk.Fixed+FixedChild
-		this.IsbnButton = new global::Gtk.Button();
-		this.IsbnButton.CanFocus = true;
-		this.IsbnButton.Name = "IsbnButton";
-		this.IsbnButton.UseUnderline = true;
-		this.IsbnButton.Relief = ((global::Gtk.ReliefStyle)(1));
-		this.IsbnButton.Label = global::Mono.Unix.Catalog.GetString("Check");
-		this.fixed1.Add(this.IsbnButton);
-		global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.IsbnButton]));
-		w1.X = 220;
-		w1.Y = 80;
-		// Container child fixed1.Gtk.Fixed+FixedChild
-		this.Isbn_Text_Block = new global::Gtk.Label();
-		this.Isbn_Text_Block.Name = "Isbn_Text_Block";
-		this.Isbn_Text_Block.Xpad = 20;
-		this.Isbn_Text_Block.LabelProp = global::Mono.Unix.Catalog.GetString("Enter ISBN");
-		this.Isbn_Text_Block.Justify = ((global::Gtk.Justification)(3));
-		this.fixed1.Add(this.Isbn_Text_Block);
-		global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.Isbn_Text_Block]));
-		w2.X = 96;
-		w2.Y = 200;
-		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.vbox2 = new global::Gtk.VBox();
+		this.vbox2.CanFocus = true;
+		this.vbox2.Name = "vbox2";
+		this.vbox2.Homogeneous = true;
+		this.vbox2.Spacing = 6;
+		// Container child vbox2.Gtk.Box+BoxChild
+		this.hbox1 = new global::Gtk.HBox();
+		this.hbox1.Name = "hbox1";
+		this.hbox1.Spacing = 6;
+		// Container child hbox1.Gtk.Box+BoxChild
+		this.fixed5 = new global::Gtk.Fixed();
+		this.fixed5.Name = "fixed5";
+		this.fixed5.HasWindow = false;
+		this.hbox1.Add(this.fixed5);
+		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.fixed5]));
+		w1.Position = 0;
+		// Container child hbox1.Gtk.Box+BoxChild
+		this.eventbox1 = new global::Gtk.EventBox();
+		this.eventbox1.Name = "eventbox1";
+		// Container child eventbox1.Gtk.Container+ContainerChild
 		this.IsbnEntry = new global::Gtk.Entry();
 		this.IsbnEntry.CanFocus = true;
 		this.IsbnEntry.Name = "IsbnEntry";
 		this.IsbnEntry.IsEditable = true;
-		this.IsbnEntry.InvisibleChar = '●';
-		this.fixed1.Add(this.IsbnEntry);
-		global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.IsbnEntry]));
-		w3.X = 10;
-		w3.Y = 80;
-		this.Add(this.fixed1);
+		this.IsbnEntry.WidthChars = 13;
+		this.IsbnEntry.MaxLength = 13;
+		this.IsbnEntry.InvisibleChar = '•';
+		this.eventbox1.Add(this.IsbnEntry);
+		this.hbox1.Add(this.eventbox1);
+		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.eventbox1]));
+		w3.Position = 1;
+		// Container child hbox1.Gtk.Box+BoxChild
+		this.IsbnButton = new global::Gtk.ToggleButton();
+		this.IsbnButton.CanFocus = true;
+		this.IsbnButton.Name = "IsbnButton";
+		this.IsbnButton.UseUnderline = true;
+		this.IsbnButton.Label = global::Mono.Unix.Catalog.GetString("Check");
+		this.hbox1.Add(this.IsbnButton);
+		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.IsbnButton]));
+		w4.Position = 2;
+		w4.Expand = false;
+		w4.Fill = false;
+		// Container child hbox1.Gtk.Box+BoxChild
+		this.fixed6 = new global::Gtk.Fixed();
+		this.fixed6.Name = "fixed6";
+		this.fixed6.HasWindow = false;
+		this.hbox1.Add(this.fixed6);
+		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.fixed6]));
+		w5.Position = 3;
+		this.vbox2.Add(this.hbox1);
+		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbox1]));
+		w6.Position = 0;
+		w6.Expand = false;
+		w6.Fill = false;
+		// Container child vbox2.Gtk.Box+BoxChild
+		this.Isbn_Text_Block = new global::Gtk.Label();
+		this.Isbn_Text_Block.Name = "Isbn_Text_Block";
+		this.Isbn_Text_Block.Ypad = 40;
+		this.Isbn_Text_Block.LabelProp = global::Mono.Unix.Catalog.GetString("Enter ISBN");
+		this.Isbn_Text_Block.Justify = ((global::Gtk.Justification)(2));
+		this.vbox2.Add(this.Isbn_Text_Block);
+		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.Isbn_Text_Block]));
+		w7.Position = 1;
+		w7.Expand = false;
+		w7.Fill = false;
+		this.Add(this.vbox2);
 		if ((this.Child != null))
 		{
 			this.Child.ShowAll();
 		}
-		this.DefaultWidth = 320;
-		this.DefaultHeight = 300;
+		this.DefaultWidth = 398;
+		this.DefaultHeight = 352;
 		this.Show();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
-		this.IsbnButton.Clicked += new global::System.EventHandler(this.OnIsbnButtonClicked);
 		this.IsbnEntry.Activated += new global::System.EventHandler(this.OnIsbnButtonClicked);
+		this.IsbnButton.Clicked += new global::System.EventHandler(this.OnIsbnButtonClicked);
 	}
 }
