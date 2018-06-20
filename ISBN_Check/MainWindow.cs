@@ -20,18 +20,14 @@ public partial class MainWindow : Gtk.Window
         if (chk.Length == 10)
         {
             string temp = chk.Substring(0, 9);
-            int checknum = 0;
+            int num = 0;
             for (int i = 0; i < 9; i++)
-            {
-                checknum = checknum + Convert.ToInt32(Convert.ToString(chk[i])) * (10 - i);
-            }
-            int checkdigit = checknum % 11;
-            checkdigit = 11 - checkdigit;
-            if (Convert.ToInt32(Convert.ToString(chk[9])) == checkdigit)
-            {
-                return 1;
-            }
-            return 0;
+                num += Convert.ToInt32(Convert.ToString(chk[i])) * (10 - i);
+            num = num % 11;
+            num = 11 - num;
+            if (num != Convert.ToInt32(Convert.ToString(chk[9])))
+                return 0;
+            return 1;
         }
         else if (chk.Length == 13)
         {
@@ -61,15 +57,13 @@ public partial class MainWindow : Gtk.Window
         {
             int test = Isbncheck(IsbnEntry.Text);
             if (test == 1)
-                Isbn_Text_Block.Text="Valid";
+                Isbn_Text_Block.Text = "Valid";
             else if (test == 0)
-                Isbn_Text_Block.Text="Invalid";
+                Isbn_Text_Block.Text = "Invalid";
             else
                 Isbn_Text_Block.Text = "Wrong Length.";
         }
         else
-        {
             Isbn_Text_Block.Text = "Enter ISBN!";
-        }
     }
 }
